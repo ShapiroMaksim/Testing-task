@@ -522,3 +522,9 @@ void MainMenu::ReadContactsFromFile()
     std::cout << "Ïðî÷èòàííî " << myContacts->GetNumberContacts() << " êîíòàêòîâ";
     Waiting();
 }
+
+int main() {
+	MainMenu a;
+	a.Start();
+	return 0;
+}
