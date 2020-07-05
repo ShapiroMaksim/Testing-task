@@ -23,6 +23,11 @@ void Contacts::AddContact(Contact& NewContact)
 
 Contact& Contacts::SearchByFIO(std::string FIO)
 {
+	for (int i = 0; i < MyContacts->size(); i++)
+	{
+		if (FIO == (*MyContacts)[i].FIO)
+			return (*MyContacts)[i];
+	}
 	return (*new Contact());
 }
 
@@ -316,7 +321,7 @@ void MainMenu::Waiting()
 {
 	std::cout << "\nÍàæìèòå ëþáóþ êëàâèøó äëÿ ïðîäîëæåíèÿ...";
 	getchar();
-	getchar();
+	//getchar();
 }
 
 
@@ -346,7 +351,7 @@ void MainMenu::SearcheByFIO()
     getchar();
     std::cout << "Ââåäèòå Ô.È.Î: ";
     std::getline(std::cin, FIO);
-    Contact res = myContacts->SearchByFIO(FIO);
+    Contact& res = myContacts->SearchByFIO(FIO);
     if (res.number == "" && res.FIO == "")
         std::cout << "Êîíòàêò íå íàéäåí!";
     else
@@ -367,6 +372,7 @@ void MainMenu::ChangeByFIO()
 	{
 		std::cout << "Êîíòàêò íå íàéäåí!";
 		Waiting();
+		return;
 	}
     else
         std::cout << "Êîíòàêò íàéäåí: " << res.ToString();
