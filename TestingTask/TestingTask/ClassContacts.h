@@ -45,3 +45,30 @@ public:
 	void RecordFile(std::string path);
 	
 };
+
+class MainMenu
+{
+private:
+	Contacts* myContacts;
+public:
+	MainMenu();
+	void Start();
+	void printHead();
+	void MenuHandler();
+	int Menu();
+	void PrintMainMenu();
+	void IncorrectAnswer();
+	void Waiting();
+	void AddContact();
+	void SearcheByFIO();
+	void ChangeByFIO();
+	void SearcheByNumber();
+	void GetContactsWhenFirstChar();
+	void GetContactsCount();
+	void AddContactToElectListByFIO();
+	void RemoveContactFromElectListByFIO();
+	void GetElectContacts();
+	void RemoveContactByNumber();
+	void SaveContactsToFile();
+	void ReadContactsFromFile();
+};
