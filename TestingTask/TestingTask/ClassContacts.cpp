@@ -276,7 +276,7 @@ void MainMenu::MenuHandler()
         case 11: SaveContactsToFile();              break;
         case 12: ReadContactsFromFile();            break;
         case 13:toContinue = false;                 break;
-		default: IncorrectAnswer();                 break;
+		default: IncorrectAnswer();             	break;
 		}
 	}
 }
@@ -314,6 +314,7 @@ void MainMenu::IncorrectAnswer()
 {
 	printHead();
 	std::cout << "\nÎøèáêà: íåâåðíàÿ îïöèÿ";
+	getchar();
 	Waiting();
 }
 
@@ -487,6 +488,7 @@ void MainMenu::GetElectContacts()
             std::cout << res[i].ToString() << "\n";
         }
     }
+	getchar();
     Waiting();
 }
 
